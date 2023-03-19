@@ -19,7 +19,8 @@ namespace ShifuChat.DAL
                  @"insert into users (Firstname, SecondName, Phone,
                  Email, Profession, Salt, Password) 
                  values(@FirstName, @SecondName, @Phone,
-                 @Email, @Profession, @Salt, @Password)";
+                 @Email, @Profession, @Salt, @Password);
+                 SELECT currval(pg_get_serial_sequence('users','id'));";
 
                  return await connection.ExecuteAsync(sqlResponse, model);
             }
