@@ -1,0 +1,28 @@
+﻿@using ShifuChat.ViewModels;
+@using ShifuChat;
+@using ShifuChat.Models;
+
+@model RegisterViewModel
+
+
+@{ ViewData["Title"] = "Welcome!"; }
+
+<div>
+    <form asp-controller="Login" asp-action="Index">
+        <p>
+            <h1>Welcome back!</h1>
+            <label>
+                Email</lable>
+                <input name="Email" type="text" placeholder="Email" value="@Model.Email" />
+                <div class="error">@Html.ValidationMessageFor(m => m.Email)</div>
+        </p>
+
+        <p class="login-form-attribute">
+            <label>
+                Password</lable>
+                <input name="Password" type="password" />
+                <div class="error">@Html.ValidationMessageFor(m => m.Password)</div>
+        </p>
+        <button>Log in</button>
+    </form>
+</div>
