@@ -15,7 +15,7 @@ namespace ShifuChat.BL.GiveMeUser
 
         public bool IsRegesteredUser()
         {
-            return _httpContext.HttpContext?.Session.GetInt32(Helper.ConstantSessionBL.constSession) != null;
+            return _httpContext.HttpContext?.Session?.GetInt32(Helper.ConstantSessionBL.constSession) != null;
         }
     }
 }

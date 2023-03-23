@@ -18,7 +18,7 @@ public class HomeController : Controller
 
     public  IActionResult Index()
     {
-        return  View(_isRegesteredUser.IsRegesteredUser());
+        return View(_isRegesteredUser.IsRegesteredUser());
     }
 
     public IActionResult Privacy()

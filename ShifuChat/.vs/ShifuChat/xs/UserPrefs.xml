@@ -1,32 +1,40 @@
 ﻿<Properties StartupConfiguration="{E1AA2CBF-0852-4EA2-BA72-830A469B0850}|https">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/syrup/Desktop/Interpise/ShifuChatHome/ShifuChat/DAL/IdentityDbContext.cs" relfile="DAL/IdentityDbContext.cs" line="43" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="BL/GiveMeUser/IdentityUser.cs">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.ShifuChat PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="BL/Helper/ConstantSessionBL.cs">
     <Files>
-      <File FileName="Program.cs" />
-      <File FileName="Controllers/RegisterController.cs" />
+      <File FileName="BL/GiveMeUser/IIdentityUser.cs" Line="13" Column="14" />
+      <File FileName="ViewModels/RegisterViewModel.cs" Line="14" Column="13" />
+      <File FileName="Program.cs" Line="37" Column="1" />
+      <File FileName="Controllers/RegisterController.cs" Line="48" Column="1" />
       <File FileName="Views/Shared/_Layout.cshtml" />
       <File FileName="Views/Shared/_ValidationScriptsPartial.cshtml" />
-      <File FileName="ViewModels/RegisterViewModel.cs" />
-      <File FileName="Controllers/LoginController.cs" Line="50" Column="1" />
+      <File FileName="Controllers/LoginController.cs" Line="28" Column="1" />
       <File FileName="DAL/MapperIdentityUser/MapperUserIdenty.cs" />
       <File FileName="Views/Home/Index.cshtml" />
-      <File FileName="Views/Register/Index.cshtml" />
+      <File FileName="Views/Register/Index.cshtml" Line="11" Column="56" />
       <File FileName="DAL/Helper/DbHelper.cs" />
-      <File FileName="Controllers/HomeController.cs" />
-      <File FileName="DAL/IdentityDbContext.cs" Line="25" Column="54" />
-      <File FileName="DAL/IIdentityDbContext.cs" />
+      <File FileName="Controllers/HomeController.cs" Line="13" Column="1" />
+      <File FileName="DAL/IdentityDbContext.cs" Line="43" Column="1" />
+      <File FileName="DAL/IIdentityDbContext.cs" Line="1" Column="1" />
       <File FileName="BL/GiveMeUser/IRegesteredUser.cs" />
-      <File FileName="BL/GiveMeUser/RegesteredUser.cs" />
-      <File FileName="BL/GiveMeUser/SessionDb.cs" />
-      <File FileName="BL/GiveMeUser/IIdentityUser.cs" />
-      <File FileName="BL/GiveMeUser/ISessionDb.cs" />
-      <File FileName="BL/GiveMeUser/IdentityUser.cs" Line="39" Column="32" />
-      <File FileName="BL/Helper/ConstantSessionBL.cs" />
-      <File FileName="ViewModels/LoginViewModel.cs" />
+      <File FileName="BL/GiveMeUser/RegesteredUser.cs" Line="11" Column="1" />
+      <File FileName="BL/GiveMeUser/SessionDb.cs" Line="1" Column="1" />
+      <File FileName="BL/GiveMeUser/ISessionDb.cs" Line="1" Column="1" />
+      <File FileName="BL/GiveMeUser/IdentityUser.cs" Line="58" Column="1" />
+      <File FileName="BL/Helper/ConstantSessionBL.cs" Line="1" Column="1" />
+      <File FileName="ViewModels/LoginViewModel.cs" Line="1" Column="1" />
       <File FileName="Views/_ViewImports.cshtml" />
-      <File FileName="Views/Login/Index.cshtml" Line="15" Column="1" />
+      <File FileName="Views/Login/Index.cshtml" Line="12" Column="1" />
+      <File FileName="DAL/Models/UserModel.cs" Line="14" Column="1" />
+      <File FileName="../../../../Downloads/Resunet/Resunet/Program.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -35,21 +43,17 @@
             <Node name="ShifuChat" expanded="True">
               <Node name="Dependencies" expanded="True" />
               <Node name="BL" expanded="True">
-                <Node name="GiveMeUser" expanded="True">
-                  <Node name="IdentityUser.cs" selected="True" />
+                <Node name="GiveMeUser" expanded="True" />
+                <Node name="Helper" expanded="True">
+                  <Node name="ConstantSessionBL.cs" selected="True" />
                 </Node>
-                <Node name="Helper" expanded="True" />
               </Node>
               <Node name="Controllers" expanded="True" />
               <Node name="DAL" expanded="True">
                 <Node name="Helper" expanded="True" />
+                <Node name="Models" expanded="True" />
               </Node>
               <Node name="ViewModels" expanded="True" />
-              <Node name="Views" expanded="True">
-                <Node name="Login" expanded="True" />
-                <Node name="Register" expanded="True" />
-                <Node name="Shared" expanded="True" />
-              </Node>
             </Node>
           </Node>
         </State>
@@ -59,8 +63,4 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.ShifuChat PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
-  <MultiItemStartupConfigurations />
 </Properties>

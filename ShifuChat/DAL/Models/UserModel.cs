@@ -8,13 +8,20 @@ namespace ShifuChat.DAL.Models
 	{
 		[Key]
 		public int? Id { get; set; }
-		public string Firstname { get; set; } = null!;
-		public string SecondName { get; set; } = null!;
-		public string Phone { get; set; } = null!;
-		public string Email { get; set; } = null!;
-		public string Profession { get; set; } = null!;
-		public string Salt { get; set; } = null!;
- 		public string Password { get; set; } = null!;
+        [Key]
+        public string Firstname { get; set; } = null!;
+        [Key]
+        public string SecondName { get; set; } = null!;
+        [Key]
+        public string Phone { get; set; } = null!;
+        [Key]
+        public string Email { get; set; } = null!;
+        [Key]
+        public string Profession { get; set; } = null!;
+        [Key]
+        public string Salt { get; set; } = null!;
+        [Key]
+        public string Password { get; set; } = null!;
 	}
 }
    

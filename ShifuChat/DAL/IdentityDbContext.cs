@@ -34,7 +34,7 @@ namespace ShifuChat.DAL
 
                 return await connection.QueryFirstOrDefaultAsync<UserModel>(
                 @"Select FirstName, SecondName,
-                Phone, Email, Profession, Password, Salt
+                Phone, Email, Profession, Password, Salt, Id
                 From Users where Id = @id", new { id = id }) ?? new UserModel();
             }
         }

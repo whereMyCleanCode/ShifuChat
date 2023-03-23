@@ -34,8 +34,8 @@ namespace ShifuChat.Controllers
         {
             if (ModelState.IsValid)
             {
-                    int id = await _identity.LoginUser(model.Email!, model.Password!, model.RememberMe == true);
-                    return Redirect("/");    
+                    await _identity.LoginUser(model.Email!, model.Password!, model.RememberMe == true);
+                    return Redirect("Home/Index");    
             }
 
             return View("Index", model);

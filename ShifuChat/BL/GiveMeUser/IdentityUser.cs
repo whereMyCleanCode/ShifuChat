@@ -27,7 +27,7 @@ namespace ShifuChat.BL
            model.Salt = Guid.NewGuid().ToString();
            model.Password = _crypto.HashPassword(model.Password, model.Salt);
 
-           int id =  await _identityDbContext.CreateUser(model);
+            int id =  await _identityDbContext.CreateUser(model);
             IsLogIn(id);
             return id;
         }
@@ -35,17 +35,18 @@ namespace ShifuChat.BL
         public async Task<int> LoginUser(string email,string password,bool rememberMe)
         {
             var user = await _identityDbContext.GetUser(email);
-            if (user.Id != null && password == _crypto.HashPassword(password, user.Salt))
+            if (user.Id != null && user.Password == _crypto.HashPassword(password, user.Salt))
             {
                 IsLogIn(user.Id ?? 0);
                 return user.Id ?? 0;
             }
-            return 0;
+            else
+                return 0;
         }
 
         public void IsLogIn(int id)
         {
-            _httpContex.HttpContext?.Session?.SetInt32(Helper.ConstantSessionBL.constSession,id);
+            _httpContex.HttpContext?.Session.SetInt32(Helper.ConstantSessionBL.constSession,id);
         }
 
         public async Task<ValidationResult?> ValidateUser(string email)
