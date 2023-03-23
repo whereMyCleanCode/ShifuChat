@@ -12,31 +12,30 @@ namespace ShifuChat.Controllers
 	{
 
         private readonly IIdentityUser _identity;
+        private readonly IRegesteredUser _isRegestered;
 
-        public LoginController(IIdentityUser identityUser)
+        public LoginController(IIdentityUser identityUser,IRegesteredUser isRegestered)
         {
             _identity = identityUser;
+            _isRegestered = isRegestered;
         }
 
         [HttpGet]
         [Route("/Login")]
         public IActionResult Index()
         {
-            return View("Index", new RegisterViewModel());
+            return View("Index", new LoginViewModel());
         }
 
 
         [HttpPost]
         [Route("/Login")]
-        public async Task<IActionResult> IndexPost(RegisterViewModel model)
+        public async Task<IActionResult> IndexPost(LoginViewModel model)
         {
             if (ModelState.IsValid)
             {
-                await _identity.Create(
-                ShifuChat.DAL.MapperIdentityUser.MapperUserIdenty.
-                ReturnUserModelMapper(model));
-
-                return Redirect("/Home/Index");
+                    int id = await _identity.LoginUser(model.Email!, model.Password!, model.RememberMe == true);
+                    return Redirect("/");    
             }
 
             return View("Index", model);

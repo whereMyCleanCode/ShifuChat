@@ -2,21 +2,22 @@
 using ShifuChat.DAL;
 using ShifuChat.DAL.Models;
 using ShifuChat.BL.CryptoPub;
-using ShifuChat.ViewModels.Login;
+using ShifuChat.ViewModels;
 using ShifuChat.BL.Helper;
+using System.ComponentModel.DataAnnotations;
 
 namespace ShifuChat.BL
 {
     public class IdentityUser : IIdentityUser
     {
         private readonly IHttpContextAccessor _httpContex;
-        private readonly IIdentity _identity;
+        private readonly IIdentity _identityDbContext;
         private readonly ICryptoWorker _crypto;
 
         public IdentityUser(IHttpContextAccessor httpContext, IIdentity identity,ICryptoWorker crypto)
         {
             _httpContex = httpContext;
-            _identity = identity;
+            _identityDbContext = identity;
             _crypto = crypto;
         }
 
@@ -26,25 +27,36 @@ namespace ShifuChat.BL
            model.Salt = Guid.NewGuid().ToString();
            model.Password = _crypto.HashPassword(model.Password, model.Salt);
 
-           int id =  await _identity.CreateUser(model);
-            isLogIn(id);
+           int id =  await _identityDbContext.CreateUser(model);
+            IsLogIn(id);
             return id;
         }
 
-        public async Task<int> SearceUser(string email,string password)///bool remember me methood will be in next commit check it
+        public async Task<int> LoginUser(string email,string password,bool rememberMe)
         {
-            var user = await _identity.GetUser(email);
+            var user = await _identityDbContext.GetUser(email);
             if (user.Id != null && password == _crypto.HashPassword(password, user.Salt))
             {
+                IsLogIn(user.Id ?? 0);
                 return user.Id ?? 0;
             }
             return 0;
         }
 
-        public void isLogIn(int id)
+        public void IsLogIn(int id)
         {
             _httpContex.HttpContext?.Session?.SetInt32(Helper.ConstantSessionBL.constSession,id);
         }
+
+        public async Task<ValidationResult?> ValidateUser(string email)
+        {
+            var user = await _identityDbContext.GetUser(email);
+            if (user.Id != null)
+                return new ValidationResult("Input uniq email adress");
+            else
+               return null;
+        }
+
     }
 }
 

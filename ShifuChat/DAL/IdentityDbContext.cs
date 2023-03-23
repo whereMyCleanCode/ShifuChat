@@ -22,7 +22,7 @@ namespace ShifuChat.DAL
                  @Email, @Profession, @Salt, @Password);
                  SELECT currval(pg_get_serial_sequence('users','id'));";
 
-                 return await connection.ExecuteAsync(sqlResponse, model);
+                 return await connection.QuerySingleAsync<int>(sqlResponse, model);
             }
         }
 
@@ -47,7 +47,7 @@ namespace ShifuChat.DAL
 
                 return await connection.QueryFirstOrDefaultAsync<UserModel>(
                 @"Select FirstName, SecondName,
-                Phone, Email, Profession, Password, Salt
+                Phone, Email, Profession, Password, Salt, Id
                 From Users where Email = @email", new { email = email }) ?? new UserModel();
 
             }

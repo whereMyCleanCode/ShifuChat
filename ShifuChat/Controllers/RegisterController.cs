@@ -29,12 +29,20 @@ namespace ShifuChat.Controllers
 		{
 			if (ModelState.IsValid)
 			{
-				await _identity.Create(
-				ShifuChat.DAL.MapperIdentityUser.MapperUserIdenty.
-				ReturnUserModelMapper(model));
+				var errorVariable = await (_identity.ValidateUser(model.Email ?? ""));
 
-				 return Redirect("/Home/Index");
+				if (errorVariable != null)
+				{
+					ModelState.TryAddModelError("Email", errorVariable.ErrorMessage!);
+				}
 			}
+				if (ModelState.IsValid)
+				{
+                    await _identity.Create(
+                    ShifuChat.DAL.MapperIdentityUser.MapperUserIdenty.
+                    ReturnUserModelMapper(model));
+                    return Redirect("/Home/Index");
+                }
 
                return View("Index", model);
         }

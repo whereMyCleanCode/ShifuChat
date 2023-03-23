@@ -1,13 +1,19 @@
 ﻿using System;
-namespace ShifuChat.ViewModels.Login
+using System.ComponentModel.DataAnnotations;
+
+namespace ShifuChat.ViewModels;
+
+public class LoginViewModel
 {
-	public class LoginViewModel
-	{
-		string? Email { get; set; }
+	[Required]
+	[DataType(DataType.EmailAddress)]
+	public string? Email { get; set; }
+	[Required]
+	[DataType(DataType.Password)]
+	public  string? Password { get; set; }
+	
+	public  bool? RememberMe { get; set; }
 
-		string? Password { get; set; }
-
-		bool RememberMe { get; set; } = false;
-	}
+ 
 }
 

@@ -5,12 +5,13 @@ namespace ShifuChat.ViewModels
 {
     public class RegisterViewModel : IValidatableObject
     {
-
+        [Key]
         [Required(ErrorMessage = "Обязательное поле для ввода!")]
         [EmailAddress(ErrorMessage = "Неккоректный формат ввода")]
         [DataType(dataType: DataType.EmailAddress)]
         public string? Email { get; set; }
 
+        [Key]
         [Required(ErrorMessage = "Побязательное поле для ввода!")]
         [DataType(dataType:DataType.Password)]
         [MinLength(6,ErrorMessage = "Пароль допжен иметь длину больше 6 символов")]
