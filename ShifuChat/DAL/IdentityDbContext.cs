@@ -7,7 +7,7 @@ using Microsoft.Data.Sql;
 
 namespace ShifuChat.DAL
 {
-    public class Identity : IIdentity
+    public class IdentityDbContext : IIdentityDbContext
     {
         public async Task<int> CreateUser(UserModel model)
         {
@@ -16,10 +16,8 @@ namespace ShifuChat.DAL
               await connection.OpenAsync();
 
                 string sqlResponse =
-                 @"insert into users (Firstname, SecondName, Phone,
-                 Email, Profession, Salt, Password) 
-                 values(@FirstName, @SecondName, @Phone,
-                 @Email, @Profession, @Salt, @Password);
+                 @"insert into users (Email, Salt, Password, NickName) 
+                 values (@Email, @Salt, @Password, @NickName);
                  SELECT currval(pg_get_serial_sequence('users','id'));";
 
                  return await connection.QuerySingleAsync<int>(sqlResponse, model);
@@ -33,8 +31,7 @@ namespace ShifuChat.DAL
                 await connection.OpenAsync();
 
                 return await connection.QueryFirstOrDefaultAsync<UserModel>(
-                @"Select FirstName, SecondName,
-                Phone, Email, Profession, Password, Salt, Id
+                @"Select Email, Password, Salt, Id, NickName
                 From Users where Id = @id", new { id = id }) ?? new UserModel();
             }
         }
@@ -46,8 +43,7 @@ namespace ShifuChat.DAL
                 await connection.OpenAsync();
 
                 return await connection.QueryFirstOrDefaultAsync<UserModel>(
-                @"Select FirstName, SecondName,
-                Phone, Email, Profession, Password, Salt, Id
+                @"Select Email, Password, Salt, Id, NickName
                 From Users where Email = @email", new { email = email }) ?? new UserModel();
 
             }

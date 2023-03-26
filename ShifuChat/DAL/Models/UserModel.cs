@@ -9,9 +9,7 @@ namespace ShifuChat.DAL.Models
 		[Key]
 		public int? Id { get; set; }
         [Key]
-        public string Firstname { get; set; } = null!;
-        [Key]
-        public string SecondName { get; set; } = null!;
+        public string NickName { get; set; } = null!;
         [Key]
         public string Phone { get; set; } = null!;
         [Key]

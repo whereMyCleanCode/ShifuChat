@@ -24,7 +24,7 @@ namespace ShifuChat.ViewModels
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
-            if (Password == "qwerty" )
+            if (Password?.Length < 7 )
             {
                 yield return new ValidationResult("Вы ввели слабый пароль.Пароль должен содержать минимум 7 цифр" , new[] { "Password" });
             }

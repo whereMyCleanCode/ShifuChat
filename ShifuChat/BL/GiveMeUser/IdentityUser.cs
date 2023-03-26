@@ -11,10 +11,10 @@ namespace ShifuChat.BL
     public class IdentityUser : IIdentityUser
     {
         private readonly IHttpContextAccessor _httpContex;
-        private readonly IIdentity _identityDbContext;
+        private readonly IIdentityDbContext _identityDbContext;
         private readonly ICryptoWorker _crypto;
 
-        public IdentityUser(IHttpContextAccessor httpContext, IIdentity identity,ICryptoWorker crypto)
+        public IdentityUser(IHttpContextAccessor httpContext, IIdentityDbContext identity,ICryptoWorker crypto)
         {
             _httpContex = httpContext;
             _identityDbContext = identity;
@@ -27,9 +27,9 @@ namespace ShifuChat.BL
            model.Salt = Guid.NewGuid().ToString();
            model.Password = _crypto.HashPassword(model.Password, model.Salt);
 
-            int id =  await _identityDbContext.CreateUser(model);
-            IsLogIn(id);
-            return id;
+           int id =  await _identityDbContext.CreateUser(model);
+           IsLogIn(id);
+              return id;
         }
 
         public async Task<int> LoginUser(string email,string password,bool rememberMe)
@@ -41,7 +41,7 @@ namespace ShifuChat.BL
                 return user.Id ?? 0;
             }
             else
-                return 0;
+                throw new Exception("not founde your email");
         }
 
         public void IsLogIn(int id)

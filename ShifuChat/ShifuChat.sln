@@ -5,6 +5,8 @@ VisualStudioVersion = 25.0.1705.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShifuChat", "ShifuChat.csproj", "{E1AA2CBF-0852-4EA2-BA72-830A469B0850}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShifuTest", "..\ShifuTest\ShifuTest.csproj", "{6AD3EB6F-2D06-4BD6-BFEB-2710B15DC552}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{E1AA2CBF-0852-4EA2-BA72-830A469B0850}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1AA2CBF-0852-4EA2-BA72-830A469B0850}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1AA2CBF-0852-4EA2-BA72-830A469B0850}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AD3EB6F-2D06-4BD6-BFEB-2710B15DC552}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AD3EB6F-2D06-4BD6-BFEB-2710B15DC552}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AD3EB6F-2D06-4BD6-BFEB-2710B15DC552}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AD3EB6F-2D06-4BD6-BFEB-2710B15DC552}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

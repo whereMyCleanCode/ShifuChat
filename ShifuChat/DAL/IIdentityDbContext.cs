@@ -4,7 +4,7 @@ using Npgsql;
 
 namespace ShifuChat.DAL
 {
-	public interface IIdentity
+	public interface IIdentityDbContext
 	{
         Task<int> CreateUser(UserModel model);
 	    Task<UserModel> GetUser(int id);

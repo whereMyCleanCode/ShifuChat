@@ -2,7 +2,7 @@
 
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddSingleton<ShifuChat.DAL.IIdentity, ShifuChat.DAL.Identity>();
+builder.Services.AddSingleton<ShifuChat.DAL.IIdentityDbContext, ShifuChat.DAL.IdentityDbContext>();
 builder.Services.AddSingleton<ShifuChat.BL.IIdentityUser, ShifuChat.BL.IdentityUser>();
 builder.Services.AddSingleton<ShifuChat.BL.CryptoPub.ICryptoWorker, ShifuChat.BL.CryptoPub.CryptoWorker>();
 builder.Services.AddScoped<ShifuChat.BL.GiveMeUser.IRegesteredUser, ShifuChat.BL.GiveMeUser.RegesteredUser>();
@@ -26,7 +26,6 @@ app.UseHttpsRedirection();
 app.MapRazorPages();
 app.UseStaticFiles();
 app.UseSession();
-app.UseAuthentication();
 app.UseAuthorization();
 app.UseRouting();
 

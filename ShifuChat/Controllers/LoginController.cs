@@ -34,8 +34,16 @@ namespace ShifuChat.Controllers
         {
             if (ModelState.IsValid)
             {
+                try
+                {
                     await _identity.LoginUser(model.Email!, model.Password!, model.RememberMe == true);
-                    return Redirect("Home/Index");    
+                    return Redirect("Home/Index");
+                }
+                catch(Exception xpn)
+                {
+                    ModelState.AddModelError("Email", "Email or Password is false");
+                }
+                    
             }
 
             return View("Index", model);
