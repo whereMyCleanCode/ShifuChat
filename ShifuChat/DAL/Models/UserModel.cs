@@ -20,6 +20,8 @@ namespace ShifuChat.DAL.Models
         public string Salt { get; set; } = null!;
         [Key]
         public string Password { get; set; } = null!;
+        [Key]
+        public string? ProfileImage { get; set; }
 	}
 }
    

@@ -5,6 +5,11 @@ using ShifuChat.BL.CryptoPub;
 using ShifuChat.ViewModels;
 using ShifuChat.BL.Helper;
 using System.ComponentModel.DataAnnotations;
+using System.IO;
+using Microsoft.AspNetCore.Mvc;
+using System.Security.Cryptography;
+using System.Text;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace ShifuChat.BL
 {
@@ -55,9 +60,32 @@ namespace ShifuChat.BL
             if (user.Id != null)
                 return new ValidationResult("Input uniq email adress");
             else
-               return null;
+                return null;
         }
 
+        public async void GetCryptoImage(string imageFile)
+        {
+            var image = imageFile;///imageFileName for path save file
+
+            MD5 md5Hash = MD5.Create();
+            byte[] input = Encoding.ASCII.GetBytes(Convert.ToString(image));///maybe on next step this variable 
+            byte[] hashByte = md5Hash.ComputeHash(input);
+
+            string hash = Convert.ToHexString(hashByte);
+
+            var dirPath = ". /wwwroot/images/" +
+                    hash.Substring(0, 2) + "/" +
+                    hash.Substring(0, 4);
+
+            if (!Directory.Exists(dirPath))
+                Directory.CreateDirectory(dirPath);
+
+            string fileName = dirPath + "/" + image;
+            using (var stream = System.IO.File.Create(fileName))
+            {
+                await image.CopyToA(stream);
+            }
+        }
     }
 }
 

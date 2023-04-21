@@ -1,38 +1,40 @@
 ﻿<Properties StartupConfiguration="{E1AA2CBF-0852-4EA2-BA72-830A469B0850}|https">
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../ShifuTest/IdentityTest.cs">
+  <MonoDevelop.Ide.ItemProperties.ShifuChat PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ViewModels/ProfileViewModel.cs">
     <Files>
-      <File FileName="BL/GiveMeUser/IIdentityUser.cs" Line="1" Column="1" />
-      <File FileName="ViewModels/RegisterViewModel.cs" />
-      <File FileName="Program.cs" Line="29" Column="1" />
-      <File FileName="Controllers/RegisterController.cs" />
+      <File FileName="BL/GiveMeUser/IIdentityUser.cs" />
+      <File FileName="ViewModels/RegisterViewModel.cs" Line="1" Column="1" />
+      <File FileName="Program.cs" />
+      <File FileName="Controllers/RegisterController.cs" Line="26" Column="9" />
       <File FileName="Views/Shared/_Layout.cshtml" />
       <File FileName="Views/Shared/_ValidationScriptsPartial.cshtml" />
-      <File FileName="Controllers/LoginController.cs" />
+      <File FileName="Controllers/LoginController.cs" Line="1" Column="1" />
       <File FileName="DAL/MapperIdentityUser/MapperUserIdenty.cs" />
       <File FileName="Views/Home/Index.cshtml" />
       <File FileName="Views/Register/Index.cshtml" />
       <File FileName="DAL/Helper/DbHelper.cs" />
-      <File FileName="Controllers/HomeController.cs" />
+      <File FileName="Controllers/HomeController.cs" Line="1" Column="1" />
       <File FileName="DAL/IdentityDbContext.cs" />
       <File FileName="DAL/IIdentityDbContext.cs" />
       <File FileName="BL/GiveMeUser/IRegesteredUser.cs" />
       <File FileName="BL/GiveMeUser/RegesteredUser.cs" />
       <File FileName="BL/GiveMeUser/SessionDb.cs" />
       <File FileName="BL/GiveMeUser/ISessionDb.cs" />
-      <File FileName="BL/GiveMeUser/IdentityUser.cs" Line="20" Column="43" />
+      <File FileName="BL/GiveMeUser/IdentityUser.cs" />
       <File FileName="BL/Helper/ConstantSessionBL.cs" />
-      <File FileName="ViewModels/LoginViewModel.cs" />
+      <File FileName="ViewModels/LoginViewModel.cs" Line="1" Column="1" />
       <File FileName="Views/_ViewImports.cshtml" />
-      <File FileName="Views/Login/Index.cshtml" />
+      <File FileName="Views/Login/Index.cshtml" Line="1" Column="1" />
       <File FileName="DAL/Models/UserModel.cs" />
-      <File FileName="../../../../Downloads/Resunet/Resunet/Program.cs" />
       <File FileName="Views/_ViewStart.cshtml" />
       <File FileName="BL/CryptoPub/CryptoWorker.cs" />
-      <File FileName="../ShifuTest/IdentityTest.cs" Line="33" Column="51" />
-      <File FileName="../ShifuTest/Reference/Helper.cs" Line="8" Column="9" />
-      <File FileName="../ShifuTest/Reference/BaseTest.cs" Line="17" Column="25" />
-      <File FileName="../ShifuTest/Usings.cs" Line="1" Column="1" />
+      <File FileName="../ShifuTest/IdentityTest.cs" />
+      <File FileName="../ShifuTest/Reference/Helper.cs" />
+      <File FileName="../ShifuTest/Reference/BaseTest.cs" />
+      <File FileName="../ShifuTest/Usings.cs" />
+      <File FileName="Controllers/ProfileController.cs" Line="16" Column="25" />
+      <File FileName="Views/Profile/Index.cshtml" Line="1" Column="1" />
+      <File FileName="ViewModels/ProfileViewModel.cs" Line="6" Column="44" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -43,25 +45,27 @@
               <Node name="BL" expanded="True">
                 <Node name="GiveMeUser" expanded="True" />
               </Node>
-              <Node name="DAL" expanded="True" />
-            </Node>
-            <Node name="ShifuTest" expanded="True" selected="True">
-              <Node name="Reference" expanded="True" />
+              <Node name="Controllers" expanded="True" />
+              <Node name="DAL" expanded="True">
+                <Node name="MapperIdentityUser" expanded="True" />
+              </Node>
+              <Node name="ViewModels" expanded="True">
+                <Node name="ProfileViewModel.cs" selected="True" />
+              </Node>
+              <Node name="Views" expanded="True">
+                <Node name="Login" expanded="True" />
+                <Node name="Profile" expanded="True" />
+              </Node>
             </Node>
           </Node>
         </State>
       </Pad>
-      <Pad Id="MonoDevelop.UnitTesting.TestPad">
-        <State name="__root__">
-          <Node name="ShifuChat" expanded="True" />
-        </State>
-      </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.ShifuChat PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

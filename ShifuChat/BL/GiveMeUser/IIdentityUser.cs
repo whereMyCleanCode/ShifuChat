@@ -10,8 +10,9 @@ namespace ShifuChat.BL
 	{
 		public Task<int> Create(UserModel model);
 		public Task<int> LoginUser(string email,string password,bool rememberMe);
-		public Task<ValidationResult> ValidateUser(string email); 
-		////..........validation and more;
-	}
+		public Task<ValidationResult> ValidateUser(string email);
+		public void GetCryptoImage(IFormFile imageFile);
+        ////..........validation and more;
+    }
 }
 
